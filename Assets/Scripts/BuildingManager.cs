@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BuildingManager : MonoBehaviour {
     private Camera _mainCamera;

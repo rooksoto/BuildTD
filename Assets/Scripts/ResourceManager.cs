@@ -11,7 +11,7 @@ public class ResourceManager : MonoBehaviour {
 
     private void Awake() {
         Instance = this;
-        
+
         _resourceAmountDictionary = new Dictionary<ResourceTypeScriptableObject, int>();
 
         ResourceTypeListScriptableObject resourceTypeList =
@@ -20,7 +20,7 @@ public class ResourceManager : MonoBehaviour {
         foreach (var resourceType in resourceTypeList.list) {
             _resourceAmountDictionary[resourceType] = 0;
         }
-        
+
         TestLogResourceAmountDictionary();
     }
 
@@ -31,11 +31,11 @@ public class ResourceManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.T)) {
             AddResource(resourceTypeList.list[0], 2);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Y)) {
             AddResource(resourceTypeList.list[1], 2);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.U)) {
             AddResource(resourceTypeList.list[2], 2);
         }
@@ -50,7 +50,7 @@ public class ResourceManager : MonoBehaviour {
     public int GetResourceAmount(ResourceTypeScriptableObject resourceType) {
         return _resourceAmountDictionary[resourceType];
     }
-    
+
     private void TestLogResourceAmountDictionary() {
         foreach (ResourceTypeScriptableObject resourceType in _resourceAmountDictionary.Keys) {
             Debug.Log($"{resourceType.nameString}: {_resourceAmountDictionary[resourceType]}");
